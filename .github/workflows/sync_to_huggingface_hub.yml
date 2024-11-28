@@ -1,17 +1,21 @@
-name: Sync to Hugging Face hub
+name: Sync to Hugging Face Hub
+
 on:
   push:
     branches: [main]
   workflow_dispatch:
-  
+
 jobs:
   sync-to-hub:
-    runs on: ubuntu-latest
+    runs-on: ubuntu-latest # Corrected the syntax
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Push to hub
+
+      - name: Push to Hugging Face Hub
         env:
-            HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://divyesh01:$HF_TOKEN@huggingface.co/spaces/divyesh01/movie_recommender_system main
+          HF_TOKEN: ${{ secrets.HF_TOKEN }} # No space after "secrets."
+        run: |
+          git remote add huggingface https:divyesh01//$HF_TOKEN@huggingface.co/spaces/divyesh01/movie_recommender_system
+          git push huggingface main
