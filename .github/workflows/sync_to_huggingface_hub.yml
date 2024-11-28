@@ -1,21 +1,17 @@
-name: Sync to Hugging Face Hub
-
+name: Sync to Hugging Face hub
 on:
   push:
     branches: [main]
-  workflow_dispatch:
-
+  workflow dispatch:
+  
 jobs:
   sync-to-hub:
-    runs-on: ubuntu-latest
+    runs on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-
-      - name: Push to Hugging Face Hub
+      - name: Push to hub
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: |
-          git remote add huggingface https://divyesh:$HF_TOKEN@huggingface.co/spaces/divyesh01/movie_recommender_system
-          git push huggingface main
+            HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: git push https://divyesh01:$HF_TOKEN@huggingface.co/spaces/divyesh01/movie_recommender_system main
