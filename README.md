@@ -17,6 +17,7 @@ This is a content-based movie recommender system built using Python, Pandas, and
 ## Features  
 - Content-based filtering for personalized movie recommendations.  
 - Interactive web interface built using Streamlit.  
+- Fetches movie posters dynamically using the IMDb API.  
 - Deployed on Hugging Face Spaces.  
 
 ## Dataset  
@@ -28,6 +29,7 @@ Contains metadata for up to 5000 movies, including genres, overview, cast, and c
 - **Pandas**: For dataset manipulation.  
 - **Streamlit**: For creating the web app.  
 - **Vectorization**: To compute movie similarities using techniques like TF-IDF.  
+- **IMDb API**: To fetch movie posters dynamically, enriching the user experience.  
 
 ## Modules and Their Roles  
 
@@ -46,6 +48,7 @@ Contains metadata for up to 5000 movies, including genres, overview, cast, and c
 ### **4. Web Interface**  
 - Built with Streamlit, this module provides an interactive and user-friendly interface.  
 - Users can search for a movie, view its details, and get personalized recommendations instantly.  
+- Fetches movie posters using the IMDb API, making recommendations visually engaging.  
 
 ## Deployment  
 The project is deployed on Hugging Face Spaces. You can explore it here:  
@@ -55,9 +58,14 @@ Like this Hugging Face space? Feel free to try it out and share your feedback!
 
 ## Future Enhancements  
 - Add collaborative filtering to incorporate user behavior into recommendations.  
-- Use external APIs like IMDb or TMDB for real-time data integration.  
+- Use additional APIs like TMDB for real-time movie metadata updates.  
 - Improve scalability to handle larger datasets.  
+
+## API Reference  
+This project integrates the **IMDb API** from RapidAPI to fetch movie posters dynamically. For more details on the API, check out the [IMDb API documentation](https://rapidapi.com/apidojo/api/imdb8/).  
 
 ## Acknowledgments  
 - [TMDB Movie Metadata Dataset](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata)  
+- [IMDb API](https://rapidapi.com/apidojo/api/imdb8/)  
+
 
